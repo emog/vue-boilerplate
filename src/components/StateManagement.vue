@@ -4,7 +4,7 @@
     <div>
       <h3>{{ $store.state.default.count }}</h3>
       <button @click="onClick" class="btn">
-        Increment
+        {{ 'increment'| capitalize }}
       </button>
     </div>
   </div>
