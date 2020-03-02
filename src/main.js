@@ -2,13 +2,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-// Import Vue App, routes, store
+// Import Vue App, routes, store, filters
 import App from '@/App';
 import routes from '@/routes';
 import store from '@/store';
-import '@/filters'
+import '@/filters';
 
-Vue.config.productionTip = false
+//Plugins
+// import '@/plugins/axios';
+
+
+Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 

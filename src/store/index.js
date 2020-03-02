@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersist from 'vuex-persist'
 
 Vue.use(Vuex);
 
@@ -29,7 +30,16 @@ const modules = requireContext.keys()
         return { ...modules, [name]: module };
     }, {});
 
+/**
+ *
+ */
+
+const vuexLocalStorage = new VuexPersist({
+    key: 'vuex',
+    storage: window.localStorage, //You can use localStorage or sessionStorage
+})
 
 export default new Vuex.Store({
-    modules: modules
+    modules: modules,
+    plugins: [ vuexLocalStorage.plugin ]
 });

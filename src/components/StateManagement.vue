@@ -12,7 +12,6 @@
 
 <script>
 export default {
-    name: 'AppMedium',
     methods: {
         onClick (){
             this.$store.commit('default/increment');
