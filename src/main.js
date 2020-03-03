@@ -1,31 +1,32 @@
 // Import Vue
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 
 // Import Vue App, routes, store, filters
 import App from '@/App';
-import routes from '@/routes';
 import store from '@/store';
+import router from '@/router'
 import '@/filters';
 
-//Plugins
-// import '@/plugins/axios';
+import NProgress from 'vue-nprogress'
 
+Vue.use(NProgress, {
+    latencyThreshold: 200, // Number of ms before progressbar starts showing, default: 100,
+    router: true, // Show progressbar when navigating routes, default: true
+    http: false // Show progressbar when doing Vue.http, default: true
+});
+
+const nprogress = new NProgress();
 
 Vue.config.productionTip = false;
 
-Vue.use(VueRouter);
 
-// Configure router
-const router = new VueRouter({
-    routes,
-    linkActiveClass: 'active',
-    mode: 'history'
-});
+//Configure nprogress
+
 
 new Vue({
     el: '#app',
     render: h => h(App),
+    nprogress,
     router,
     store
 });
