@@ -10,7 +10,6 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const webpackConfig = {
     entry: {
-        polyfill: '@babel/polyfill',
         main: helpers.root('src', 'main'),
     },
     resolve: {
