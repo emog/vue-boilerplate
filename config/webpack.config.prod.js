@@ -75,7 +75,7 @@ if (!isProd) {
     webpackConfig.devtool = 'source-map';
 
     if (process.env.npm_config_report) {
-        const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').ccc;
+        const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
         webpackConfig.plugins.push(new BundleAnalyzerPlugin());
     }
 }
