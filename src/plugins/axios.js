@@ -2,7 +2,7 @@ import axios from 'axios';
 import NProgress from 'vue-nprogress'
 
 const instance = axios.create({
-    baseURL: '/api'
+    baseURL: process.env.API_URL
 });
 
 import createAuthRefreshInterceptor from 'axios-auth-refresh';

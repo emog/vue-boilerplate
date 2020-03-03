@@ -3,7 +3,10 @@
     <h1>State Management</h1>
     <div>
       <h3>{{ $store.state.default.count }}</h3>
-      <button @click="onClick" class="btn">
+      <button
+        class="btn"
+        @click="onClick"
+      >
         {{ 'increment'| capitalize }}
       </button>
     </div>
@@ -12,6 +15,9 @@
 
 <script>
 export default {
+    metaInfo: {
+        title: 'State Management',
+    },
     methods: {
         onClick (){
             this.$store.commit('default/increment');

@@ -6,7 +6,7 @@ import App from '@/App';
 import store from '@/store';
 import router from '@/router'
 import '@/filters';
-
+import '@/plugins'
 import NProgress from 'vue-nprogress'
 
 Vue.use(NProgress, {

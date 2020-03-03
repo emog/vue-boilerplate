@@ -4,7 +4,10 @@
 
 <script>
 export default {
-    name: 'AppHome'
+    name: 'AppHome',
+    metaInfo: {
+        title: 'AppHome',
+    }
 };
 </script>
 

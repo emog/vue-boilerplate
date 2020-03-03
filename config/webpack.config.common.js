@@ -1,10 +1,11 @@
 'use strict';
 
-const VueLoaderPlugin      = require('vue-loader/lib/plugin');
-const HtmlPlugin           = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const helpers              = require('./helpers');
-const isDev                = process.env.NODE_ENV === 'development';
+const helpers = require('./helpers');
+const isDev = process.env.NODE_ENV === 'development';
 
 const webpackConfig = {
     entry: {
@@ -56,6 +57,7 @@ const webpackConfig = {
         ]
     },
     plugins: [
+        new Dotenv(),
         new VueLoaderPlugin(),
         new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' })
     ]
