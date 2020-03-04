@@ -20,7 +20,7 @@
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
     [
-      "@babel/transform-runtime",
+      "@babel/plugin-transform-runtime",
       {
         "corejs": 3
       }
