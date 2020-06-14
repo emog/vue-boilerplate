@@ -4,7 +4,7 @@ const webpack                  = require('webpack');
 const merge                    = require('webpack-merge');
 const OptimizeCSSAssetsPlugin  = require('optimize-css-assets-webpack-plugin');
 const MiniCSSExtractPlugin     = require('mini-css-extract-plugin');
-const UglifyJSPlugin           = require('uglifyjs-webpack-plugin');
+const TerserPlugin             = require('terser-webpack-plugin');
 const CompressionPlugin        = require('compression-webpack-plugin');
 const helpers                  = require('./helpers');
 const commonConfig             = require('./webpack.config.common');
@@ -21,13 +21,14 @@ const webpackConfig = merge(commonConfig, {
     },
     optimization: {
         runtimeChunk: 'single',
+        minimize: true,
         minimizer: [
             new OptimizeCSSAssetsPlugin({
                 cssProcessorPluginOptions: {
                     preset: [ 'default', { discardComments: { removeAll: true } } ],
                 }
             }),
-            new UglifyJSPlugin({
+            new TerserPlugin({
                 cache: true,
                 parallel: true,
                 sourceMap: !isProd
