@@ -6,7 +6,7 @@
 export default {
     name: 'AppHome',
     metaInfo: {
-        title: 'AppHome',
+        title: 'App Home',
     }
 };
 </script>
