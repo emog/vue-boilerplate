@@ -60,7 +60,7 @@ const webpackConfig = {
         new Dotenv(),
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
-        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' })
+        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'auto' })
     ]
 };
 
